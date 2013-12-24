@@ -1,7 +1,4 @@
-# NMEA 0183 GPGGA Simulator & Sentense Parser @version: 0.0.1
-
-This software is developed on request for evaluation purposes by
-International Livestock Research Institute (ILRI) - Kenya.
+# NMEA 0183 GPGGA PHP Parser
 
 This software simulates a stream of Time, position and fix related data
 (GPGGA) for a GPS receiver.
@@ -10,12 +7,9 @@ This software simulates a stream of Time, position and fix related data
     
     * GPGGA
 
-# HOW TO USE THIS APPLICATION
+# Installation
 
-# INSTALLATION
-
-To run the sample application requires a web server as the aplication is
-written in PHP.
+To run the sample application requires a web server as the aplication is written in PHP.
 
 You can use WAMP server http://www.sourceforge.org/wamp
 After getting WAMP or XAMP and installing it on your machine, Grab the all
@@ -23,15 +17,13 @@ the code in this project folder as a zip and if on wamp extract to the folder
 www found in C:/wamp/www/
 
 Start wamp server by clicking its icon on your desktop and go to your browser
-and type in http://localhost/NMEA-GPGGA
+and type in http://localhost/NMEA
 
-Click test simulation...
+	*Click Stream Simulation
+	*Click Parse sentence Stream
+	*Click Try serial port stream
 
-or
-
-Click parse streaming strings...
-
-# STREAM SIMULATION
+# Simulate stream
 
 Php this may not give the implied meaning of streaming as php uses
 blocking I/O, that is, processing occurs step by step hence all data
@@ -53,7 +45,7 @@ capture them and write them to file.
 Sentences are simulated one per second, i.e. it simulates GPS with a
 1 Hz NMEA stream.
 
-# SENTENCE PROCESSING & PARSING
+# Sentence processing & parsing
 
 The Nmea strings are read from the gga-log.txt file a line at a time
 simulating an input stream and are checked for minimum and maximum length
@@ -68,8 +60,9 @@ a web app or decoded right into a database.
 It takes PHP seconds to parse this data. My benchmark test with a log of 60 lines
 took about 4 seconds on a 1GB RAM laptop.
 
-# REFERENCES & ATTRIBUTIONS
+# References & Attributions
 
 * NMEA 0183 GPGGA reference http://aprs.gids.nl/nmea/#gga
 * NMEA sample log courtesy http://freenmea.net/Home/NmeaEmitter
+* Php-serial authored by Rémy Sanchez
 
